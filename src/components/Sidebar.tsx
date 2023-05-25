@@ -31,7 +31,7 @@ function Sidebar() {
             <ul className="space-y-1">
               <li className="item-center flex justify-around">
                 <Link
-                  href="/"
+                  href="/Header"
                   onClick={handleClick}
                   className={`flex w-40  items-center  rounded-xl p-3 text-sm font-bold  hover:bg-violet-300 hover:text-black ${
                     activeTab === "Home"

@@ -5,7 +5,7 @@ export default function Hero() {
 
   return (
     <>
-      <div>Hello , {sessionData ? sessionData.user.name : null}</div>
+      <div>Hello, {sessionData ? sessionData.user.name : null}</div>
     </>
   );
 }
