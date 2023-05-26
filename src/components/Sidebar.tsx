@@ -16,14 +16,9 @@ function Sidebar() {
   return (
     <div className="flex h-screen max-h-fit w-60 flex-col justify-between bg-white shadow-xl">
       <div className="flex-grow px-4">
-        <div className="mx-auto border-b p-6 text-center">
-          <Link
-            href="/"
-            className="align-middle text-3xl font-bold leading-none text-black"
-          >
-            <span>Track</span>
-            <span className="text-violet-600">r</span>
-          </Link>
+        <div className="mx-auto border-b p-6 text-center align-middle text-3xl font-bold leading-none text-black cursor-pointer">
+          <span>Track</span>
+          <span className="text-violet-600">r</span>
         </div>
         <div className="mx-auto p-4">
           <ul className="space-y-1">
