@@ -62,7 +62,7 @@ model VerificationToken {
 
 model Assest {
     id         String       @id @default(cuid())
-    gold       Gold?
+    gold       Gold[]
     stock      Stocks[]
     mutalfunds MutalFunds[]
     cash       Cash?
