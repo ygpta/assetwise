@@ -1,11 +1,19 @@
 import { useSession } from "next-auth/react";
+import { api } from "~/utils/api";
 
 const Home = () => {
   const { data: sessionData } = useSession();
+
+
+  const { data } = api.user.getUserDetails.useQuery();
+      console.log("userdata", data);
+
   if (sessionData) {
     const {
       user: { name, image },
     } = sessionData;
+
+
     return (
       <div>
         <div className="flex items-center justify-between p-7">
