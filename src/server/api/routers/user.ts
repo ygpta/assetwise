@@ -7,10 +7,14 @@ export const userRouter = createTRPCRouter({
         id: ctx.session.user.id,
       },
       include: {
-        stocks: true,
-        mutalfunds: true,
-        gold: true,
-        cash: true,
+        asset: {
+          include: {
+            stock: true,
+            mutalfunds: true,
+            gold: true,
+            cash:true
+          },
+        },
       },
     });
   }),

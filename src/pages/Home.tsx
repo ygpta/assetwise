@@ -1,27 +1,17 @@
 import { useSession } from "next-auth/react";
-import { api } from "~/utils/api";
 
 const Home = () => {
   const { data: sessionData } = useSession();
-
-
-  const { data } = api.user.getUserDetails.useQuery();
-      console.log("userdata", data);
-
   if (sessionData) {
     const {
       user: { name, image },
     } = sessionData;
-
-
     return (
       <div>
-        <div className="flex items-center justify-between p-7">
-          <h1 className="text-center text-xl font-medium leading-none text-black ">
-            Hello, {name!.split(" ")[0]}
-          </h1>
+        <div className="flex items-center justify-between pl-4 pt-4">
+          <h1 className="text-3xl font-medium ">Hello, {name}</h1>
           <img
-            className="ml-1 h-6 w-6"
+            className="h-8 w-8"
             src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif"
             alt="hey"
           />

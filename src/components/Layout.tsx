@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-row justify-start bg-white align-middle">
       <Sidebar />
-      <main className="ml-64">{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

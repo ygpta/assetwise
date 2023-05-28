@@ -95,6 +95,7 @@ model Stocks {
     stocksId String @unique
 
     @@unique([Ticker])
+    
 }
 
 model MutalFunds {
