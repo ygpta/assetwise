@@ -1,12 +1,7 @@
 import { type NextPage } from "next";
-import { useSession } from "next-auth/react";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import Sidebar from "~/components/Sidebar";
-import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
@@ -14,10 +9,6 @@ const Home: NextPage = () => {
         <meta name="description" content="Assetwise" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-row justify-start bg-white align-middle">
-        <Sidebar />
-        <Home/>
-      </main>
     </>
   );
 };
