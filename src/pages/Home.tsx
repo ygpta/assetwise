@@ -1,7 +1,12 @@
 import { useSession } from "next-auth/react";
+import { clearConfigCache } from "prettier";
+import { api } from "~/utils/api";
 
 const Home = () => {
   const { data: sessionData } = useSession();
+  const { data}=api.user.getUserDetails.useQuery()
+console.log("homedata",data)  
+  
   if (sessionData) {
     const {
       user: { name, image },

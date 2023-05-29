@@ -1,9 +1,13 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 function Sidebar() {
-  const [activeTab, setActiveTab] = useState<string>("Home");
+   const router = useRouter();
+  const { pathname } = router;
+  
+  const [activeTab, setActiveTab] = useState<string>(pathname.split("/")[1]!.toString());
 
   const { data: sessionData } = useSession();
 
