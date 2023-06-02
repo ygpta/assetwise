@@ -75,46 +75,44 @@ model VerificationToken {
 
 model Gold {
     id String @id @default(cuid())
-    quantity     String
-    invested_Amt String
-    current_Amt  String
+    quantity     Decimal
+    invested_Amt Decimal
+    current_Amt  Decimal
     User       User         @relation(fields: [goldId], references: [id])
-    goldId String @unique
+    goldId String 
 }
 
 model Stocks {
     id String @id @default(cuid())
-    Name          String
-    Ticker        String
-    quantity      String
-    average_price String
-    current_price String
+    name          String
+    ticker        String
+    quantity      Int
+    average_price Decimal
+    current_price Decimal
     marketcap     String
     sector        String
     User       User         @relation(fields: [stocksId], references: [id])
-    stocksId String @unique
-
-    @@unique([Ticker])
+    stocksId String 
+    @@unique([ticker])
     
 }
 
 model MutalFunds {
     id String @id @default(cuid())
-    Name          String
-    Ticker        String
-    quantity      String
-    average_price String
-    current_price String
+    name          String
+    ticker        String
+    quantity      Decimal
+    average_price Decimal
+    current_price Decimal
     User       User         @relation(fields: [mutalFundsId], references: [id])
-    mutalFundsId String @unique
+    mutalFundsId String 
 
-    @@unique([Ticker])
+    @@unique([ticker])
 }
 
 model Cash {
     id String @id @default(cuid())
-    Amount      String
-    current_Amt String
+    current_Amt Decimal
     User       User         @relation(fields: [cashId], references: [id])
-    cashId String @unique
+    cashId String 
 }
