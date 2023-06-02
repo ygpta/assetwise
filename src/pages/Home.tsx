@@ -12,7 +12,11 @@ const Home = () => {
       void refetchUsersDetails();
     },
   });
-
+  const deleteStock = api.asset.deleteStock.useMutation({
+  onSuccess: () => {
+    void refetchUsersDetails();
+  },
+});
   if (sessionData && data) {
     const {
       user: { name },
@@ -31,6 +35,9 @@ const Home = () => {
             {data.stocks.map((i) => (
               <div key={i.id} className="mt-5">
                 {i.name}
+                <button className="ml-4" onClick={() => deleteStock.mutate({
+                  id:i.id
+                })}> delete</button>
               </div>
             ))}
           </div>

@@ -35,4 +35,18 @@ export const assetRouter = createTRPCRouter({
         },
       });
     }),
+
+  deleteStock: protectedProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      })
+    )
+    .mutation(({ ctx, input }) => {
+      return ctx.prisma.stocks.delete({
+        where: {
+          id: input.id,
+        }
+      });
+    }),
 });
