@@ -2,13 +2,13 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import HomeIcon from "./ui/icons/home.svg";
+import HomeIcon from "./ui/icons/layout-dashboard.svg";
+import MarketIcon from "./ui/icons/line-chart.svg";
 import LoginIcon from "./ui/icons/log-in.svg";
 import LogOutIcon from "./ui/icons/log-out.svg";
-import MarketIcon from "./ui/icons/line-chart.svg";
 import AnalysisIcon from "./ui/icons/pie-chart.svg";
-import GoalsIcon from "./ui/icons/target.svg";
 import SettingsIcon from "./ui/icons/sliders.svg";
+import GoalsIcon from "./ui/icons/target.svg";
 
 // TODO: to uplift the session call to layout and pass them as a props to sidebar and other components
 
@@ -28,7 +28,7 @@ function Minisidebar() {
   };
 
   const Menu = [
-    { id: 1, tag: HomeIcon, url: "/Home", name: "Home" },
+    { id: 1, tag: HomeIcon, url: "/Dashboard", name: "Dashboard" },
     { id: 2, tag: MarketIcon, url: "/Market", name: "Market" },
     { id: 3, tag: AnalysisIcon, url: "/Analysis", name: "Analysis" },
     { id: 4, tag: GoalsIcon, url: "/Goals", name: "Goals" },
@@ -93,4 +93,3 @@ function Minisidebar() {
   );
 }
 export default Minisidebar;
-
