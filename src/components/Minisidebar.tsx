@@ -5,6 +5,10 @@ import { useState } from "react";
 import HomeIcon from "./ui/icons/home.svg";
 import LoginIcon from "./ui/icons/log-in.svg";
 import LogOutIcon from "./ui/icons/log-out.svg";
+import MarketIcon from "./ui/icons/line-chart.svg";
+import AnalysisIcon from "./ui/icons/pie-chart.svg";
+import GoalsIcon from "./ui/icons/target.svg";
+import SettingsIcon from "./ui/icons/sliders.svg";
 
 // TODO: to uplift the session call to layout and pass them as a props to sidebar and other components
 
@@ -24,14 +28,13 @@ function Minisidebar() {
   };
 
   const Menu = [
-    { id: 1, tag: "HomeIcon", url: "/Home", name: "Home" },
-    { id: 2, tag: "MarketIcon", url: "/Market", name: "Market" },
-    { id: 3, tag: "AnalysisIcon", url: "/Analysis", name: "Analysis" },
-    { id: 4, tag: "GoalsIcon", url: "/Goals", name: "Goals" },
-    { id: 5, tag: "SettingsIcon", url: "/Settings", name: "Settings" },
+    { id: 1, tag: HomeIcon, url: "/Home", name: "Home" },
+    { id: 2, tag: MarketIcon, url: "/Market", name: "Market" },
+    { id: 3, tag: AnalysisIcon, url: "/Analysis", name: "Analysis" },
+    { id: 4, tag: GoalsIcon, url: "/Goals", name: "Goals" },
+    { id: 5, tag: SettingsIcon, url: "/Settings", name: "Settings" },
   ];
 
-  
   return (
     <div className="flex h-screen max-h-fit w-24 flex-col justify-between bg-white shadow-xl">
       {/* branding */}
@@ -44,26 +47,25 @@ function Minisidebar() {
         {/* side bar list */}
         <div className="mx-auto mb-2 p-4">
           <ul className="space-y-8">
-           
             {Menu.map((Menu) => (
-
-          <li key={Menu.id} className="item-center flex flex-col justify-center">
-              <Link
-                href={Menu.url}
-                onClick={handleClick}
-                className={`${
-                  activeTab ===Menu.name
-                    ? "font-bold	 text-violet-600"
-                    : " text-black"
-                }`}
+              <li
+                key={Menu.id}
+                className="item-center flex flex-col justify-center"
               >
-                <{Menu.tag} className="mx-auto mb-2" />
-                <div className="text-center text-sm">{Menu.name}</div>
-              </Link>
-            </li>
-        ))}
-
-
+                <Link
+                  href={Menu.url}
+                  onClick={handleClick}
+                  className={`${
+                    activeTab === Menu.name
+                      ? "font-bold	 text-violet-600"
+                      : " text-black"
+                  }`}
+                >
+                  <Menu.tag className="mx-auto mb-2" />
+                  <div className="text-center text-sm">{Menu.name}</div>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -77,13 +79,13 @@ function Minisidebar() {
       >
         {sessionData ? (
           <div>
-            <LogOutIcon />
-            <span>Sign out</span>
+            <LogOutIcon className="mx-auto mb-2" />
+            <div className="text-center text-sm">Sign out</div>
           </div>
         ) : (
           <div>
-            <LoginIcon />
-            <span>Sign in</span>
+            <LoginIcon className="mx-auto mb-2" />
+            <div className="text-center text-sm">Sign In</div>
           </div>
         )}
       </div>
@@ -92,84 +94,3 @@ function Minisidebar() {
 }
 export default Minisidebar;
 
-
-
-//  {/* home */}
-//             <li className="item-center flex flex-col justify-center">
-//               <Link
-//                 href="/Home"
-//                 onClick={handleClick}
-//                 className={`${
-//                   activeTab === "Home"
-//                     ? "font-bold	 text-violet-600"
-//                     : " text-black"
-//                 }`}
-//               >
-//                 <HomeIcon className="mx-auto mb-2" />
-//                 <div className="text-center text-sm">Home</div>
-//               </Link>
-//             </li>
-
-//             {/* market */}
-//             <li className="item-center flex flex-col justify-center">
-//               <Link
-//                 href="/Market"
-//                 onClick={handleClick}
-//                 className={`${
-//                   activeTab === "Market"
-//                     ? "font-bold	 text-violet-600"
-//                     : " text-black"
-//                 }`}
-//               >
-//                 <MarketIcon className="mx-auto mb-2" />
-//                 <div className="text-center text-sm">Market</div>
-//               </Link>
-//             </li>
-
-//             {/* Analysis */}
-//             <li className="item-center flex flex-col justify-center">
-//               <Link
-//                 href="/Analysis"
-//                 onClick={handleClick}
-//                 className={`${
-//                   activeTab === "Analysis"
-//                     ? "font-bold	 text-violet-600"
-//                     : " text-black"
-//                 }`}
-//               >
-//                 <AnalysisIcon className="mx-auto mb-2" />
-//                 <div className="text-center text-sm">Analysis</div>
-//               </Link>
-//             </li>
-
-//             {/* Goals */}
-//             <li className="item-center flex flex-col justify-center">
-//               <Link
-//                 href="/Goals"
-//                 onClick={handleClick}
-//                 className={`${
-//                   activeTab === "Goals"
-//                     ? "font-bold	 text-violet-600"
-//                     : " text-black"
-//                 }`}
-//               >
-//                 <GoalsIcon className="mx-auto mb-2" />
-//                 <div className="text-center text-sm">Goals</div>
-//               </Link>
-//             </li>
-
-//             {/* Settings */}
-//             <li className="item-center flex flex-col justify-center">
-//               <Link
-//                 href="/Settings"
-//                 onClick={handleClick}
-//                 className={`${
-//                   activeTab === "Settings"
-//                     ? "font-bold	 text-violet-600"
-//                     : " text-black"
-//                 }`}
-//               >
-//                 <SettingsIcon className="mx-auto mb-2" />
-//                 <div className="text-center text-sm">Settings</div>
-//               </Link>
-//             </li>
