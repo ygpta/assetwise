@@ -1,6 +1,7 @@
-import { createTRPCRouter } from "~/server/api/trpc";
 import { userRouter } from "~/server/api/routers/user";
-import { assetRouter } from './routers/asset';
+import { createTRPCRouter } from "~/server/api/trpc";
+import { assetRouter } from "./routers/asset";
+import { mutualFundRouter } from "./routers/mutualfund";
 
 /**
  * This is the primary router for your server.
@@ -9,7 +10,8 @@ import { assetRouter } from './routers/asset';
  */
 export const appRouter = createTRPCRouter({
   user: userRouter,
-  asset:assetRouter
+  asset: assetRouter,
+  mutualFund: mutualFundRouter,
 });
 
 // export type definition of API

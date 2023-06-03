@@ -7,7 +7,13 @@ const Home = () => {
   const { data, refetch: refetchUsersDetails } =
     api.user.getUserDetails.useQuery();
 
-  const addStock = api.asset.addStocks.useMutation({
+  const addStock = api.asset.addStock.useMutation({
+    onSuccess: () => {
+      void refetchUsersDetails();
+    },
+  });
+
+  const updateStock = api.asset.updateStock.useMutation({
     onSuccess: () => {
       void refetchUsersDetails();
     },
@@ -35,9 +41,34 @@ const Home = () => {
             {data.stocks.map((i) => (
               <div key={i.id} className="mt-5">
                 {i.name}
-                <button className="ml-4" onClick={() => deleteStock.mutate({
-                  id:i.id
-                })}> delete</button>
+                <button
+                  className="ml-4"
+                  onClick={() =>
+                    deleteStock.mutate({
+                      id: i.id,
+                    })
+                  }
+                >
+                  
+                  delete
+                </button>
+
+                <button
+                  onClick={() => {
+                    updateStock.mutate({
+                      name: "icwrerjiefoijefuife4uhjificiioioiwsd bank",
+                      quantity: 1,
+                      ticker: "icddddguhffudddcici",
+                      average_price: 22.2,
+                      current_price: 25.2,
+                      marketcap: "large",
+                      sector: "consumer",
+                      id: i.id,
+                    });
+                  }}
+                >
+                  Update the stock
+                </button>
               </div>
             ))}
           </div>
