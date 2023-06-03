@@ -2,7 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-
+// TODO: to uplift the session call to layout and pass them as a props to sidebar and other components
 function Sidebar() {
    const router = useRouter();
   const { pathname } = router;
