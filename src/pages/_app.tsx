@@ -6,7 +6,8 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 import Layout from "~/components/Layout";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
+// import Mobile from '~/components/Mobile';
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -18,6 +19,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <Layout>
         <Component {...pageProps} />
       </Layout>
+
+      {/* <Mobile/> */}
     </SessionProvider>
   );
 };

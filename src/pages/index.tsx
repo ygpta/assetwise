@@ -14,10 +14,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Assetwise" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-row justify-start bg-white align-middle">
-        <Sidebar />
-        <Home/>
-      </main>
+   
     </>
   );
 };

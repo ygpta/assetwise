@@ -7,3 +7,5 @@ const Goals = () => {
 };
 
 export default Goals;
+
+// current savinngs , saving rate , goal, time to reach as per the savings rate

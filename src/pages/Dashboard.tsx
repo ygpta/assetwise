@@ -19,10 +19,10 @@ const Home = () => {
     },
   });
   const deleteStock = api.asset.deleteStock.useMutation({
-  onSuccess: () => {
-    void refetchUsersDetails();
-  },
-});
+    onSuccess: () => {
+      void refetchUsersDetails();
+    },
+  });
   if (sessionData && data) {
     const {
       user: { name },
@@ -30,7 +30,7 @@ const Home = () => {
     return (
       <div>
         <div className="flex items-center justify-between pl-4 pt-4">
-          <h1 className="text-3xl font-medium ">Hello, {name}</h1>
+          <h1 className="text-2xl font-medium ">Hello, {name}</h1>
           <img
             className="h-8 w-8"
             src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif"
@@ -49,7 +49,6 @@ const Home = () => {
                     })
                   }
                 >
-                  
                   delete
                 </button>
 
