@@ -26,7 +26,7 @@ const Market = () => {
 
   useInterval(() => {
     fetchData();
-  }, 6000);
+  }, 60000);
 
   async function fetchData() {
     try {

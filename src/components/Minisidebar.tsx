@@ -6,7 +6,7 @@ import HomeIcon from "./ui/icons/layout-dashboard.svg";
 import MarketIcon from "./ui/icons/line-chart.svg";
 import LoginIcon from "./ui/icons/log-in.svg";
 import LogOutIcon from "./ui/icons/log-out.svg";
-import AnalysisIcon from "./ui/icons/pie-chart.svg";
+import AssetsIcon from "./ui/icons/pie-chart.svg";
 import SettingsIcon from "./ui/icons/sliders.svg";
 import GoalsIcon from "./ui/icons/target.svg";
 
@@ -30,7 +30,7 @@ function Minisidebar() {
   const Menu = [
     { id: 1, tag: HomeIcon, url: "/Dashboard", name: "Dashboard" },
     { id: 2, tag: MarketIcon, url: "/Market", name: "Market" },
-    { id: 3, tag: AnalysisIcon, url: "/Analysis", name: "Analysis" },
+    { id: 3, tag: AssetsIcon, url: "/Assets", name: "Assets" },
     { id: 4, tag: GoalsIcon, url: "/Goals", name: "Goals" },
     { id: 5, tag: SettingsIcon, url: "/Settings", name: "Settings" },
   ];
