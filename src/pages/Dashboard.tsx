@@ -1,16 +1,28 @@
 import { useSession } from "next-auth/react";
 // import { api } from "~/utils/api";
 
-// import walletIcon from "../components/ui/icons/wallet.svg"
-// import coinIcon from "../components/ui/icons/coin.svg";
-// import tradingUpIcon from "../components/ui/icons/trending-up.svg";
-// import tradingDownIcon from "../components/ui/icons/trending-down.svg";
-// import inrIcon from "../components/ui/icons/indian-rupee.svg";
-// import cashIcon from "../components/ui/icons/cash.svg";
+// import WalletIcon from "../components/ui/icons/wallet.svg"
+// import CoinIcon from "../components/ui/icons/coin.svg";
+// import TradingUpIcon from "../components/ui/icons/trending-up.svg";
+// import TradingDownIcon from "../components/ui/icons/trending-down.svg";
+// import InrIcon from "../components/ui/icons/indian-rupee.svg";
+// import CashIcon from "../components/ui/icons/cash.svg";
 import StocksIcon from "../components/ui/icons/line-chart.svg"
 
 const Home = () => {
   const { data: sessionData } = useSession();
+
+      // const Cards = [
+      // { id: 1, tag: StocksIcon, name: "Dashboard" },
+      // { id: 2, tag: CashIcon, url: "/Market", name: "Market" },
+      // { id: 3, tag: InrIcon, url: "/Assets", name: "Assets" },
+      // { id: 4, tag: TradingDownIcon, url: "/Goals", name: "Goals" },
+      // { id: 5, tag: TradingUpIcon, url: "/Settings", name: "Settings" },
+      // { id: 6, tag: CoinIcon, url: "/Goals", name: "Goals" },
+      // { id: 7, tag: WalletIcon, url: "/Settings", name: "Settings" },
+    // ];
+
+
 
   // const { data, refetch: refetchUsersDetails } =
   //   api.user.getUserDetails.useQuery();
@@ -99,13 +111,15 @@ const Home = () => {
   //   );
   // }
 
+
+
   if (sessionData) {
     const {
       user: { name },
     } = sessionData;
     return (
-      <div className="flex flex-col">
-        <div className="flex items-center justify-center pl-10 pt-4">
+      <div className="flex flex-col ml-8 pt-4">
+        <div className="flex">
           <h1 className="text-2xl font-medium ">Heya, {name}</h1>
           <img
             className="ml-2 h-8 w-8"
